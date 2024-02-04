@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Data } from './Data';
 import { Record } from './Record';
 
-
 export default function Form() {
   const [tracks, setTracks] = useState([
     { id: 1, data: new Date(2023, 5, 27), value: 10 },
@@ -44,8 +43,16 @@ export default function Form() {
       setTracks(updatedTracks);
       setEditingTrack(null);
     } else {
-      const newTrack = { id: uuidv4(), data: newData, value: dist };
-      setTracks((prevTracks) => [...prevTracks, newTrack]);
+      const existingTrack = tracks.find((track) => track.data.getTime() === newData.getTime());
+      if (existingTrack) {
+        const updatedTracks = tracks.map((track) =>
+          track.id === existingTrack.id ? { ...track, value: track.value + dist } : track
+        );
+        setTracks(updatedTracks);
+      } else {
+        const newTrack = { id: uuidv4(), data: newData, value: dist };
+        setTracks((prevTracks) => [...prevTracks, newTrack]);
+      }
     }
     setData('');
     setDist('');
