@@ -1,0 +1,97 @@
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.form_record form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form_column {
+  margin-right: 20px;
+}
+
+.form_add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  flex-flow: column;
+  width: 30%;
+  margin-right: 10px;
+}
+
+input {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  text-align: center;
+}
+
+.btn_add {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  text-align: center;
+  padding: 0;
+  border: 1px solid black;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.list span {
+  margin-left: 60px;
+  margin-right: 10px;
+}
+
+.track_list {
+  list-style-type: none;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 40px;
+}
+
+.btn_delete,
+.btn_edit {
+  width: 30px;
+  height: 30px;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  text-align: center;
+}
+
+.btn_submit {
+  width: 60px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.btn_submit:hover {
+  background-color: #45a049;
+}
+
+.btn_submit:active {
+  background-color: #3e8e41;
+}
